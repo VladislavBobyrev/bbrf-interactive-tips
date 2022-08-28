@@ -1,0 +1,113 @@
+body {
+  background: rgb(45, 39, 39);background: #2193b0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  position: relative;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+button{
+  cursor: pointer;
+}
+/* .p100 {
+  width: 100vh;
+  height: 100vh;
+  background: #0f0;
+} */
+body button:nth-child(1) {
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  padding: 0;
+}
+body button:nth-child(2) {
+  padding: 81px;
+  position: absolute;
+  top: 55px;
+  right: 150px;
+}
+body button:nth-child(3) {
+  padding: 7px;
+  position: absolute;
+  bottom: 25px;
+  right: 400px;
+}
+
+
+.bbrf-modal {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+[data-bbrf-highlight-element] {
+  position: absolute;
+  cursor: pointer;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  border-radius: 15px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  box-shadow: 1px 0px 1000vh 1000vw #000000d6;
+  animation: example-animation 1s linear infinite alternate-reverse;
+}
+[data-bbrf-description] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bbrf__description{
+  margin: 1rem;
+  padding: 1rem;
+  background: #fbfbfbb8;
+  box-shadow: 0px 0px 5px 1px #2323236b;
+  backdrop-filter: blur(15px);
+}
+.bbrf__description:before { 
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  border: 25px solid black;
+  border-color: #fbfbfbb8 transparent transparent #fbfbfbb8;
+}
+[data-bbrf-highlight-element][hidden] + [data-bbrf-description]{
+  display: none;
+}
+
+img{
+  max-height: 300px;
+}
+
+@keyframes lightShadow {
+  0%{
+    transform: translateX(-100px);
+    box-shadow: 1px 0px 1000vh 1000vw #000000ab;
+  }
+  100%{
+    transform: translateX(100px);
+    box-shadow: 1px 0px 1000vh 1000vw #000000ab,
+    inset 1px 10px 15px 13px #a0faffe6;
+  }
+}
+
+@keyframes example-animation {
+  0% {
+      background: rgba(255, 255, 255, 0);
+  }
+  100% {
+    background: rgba(0, 0, 0, 0.161);
+  }
+}
